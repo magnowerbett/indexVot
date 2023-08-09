@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sistema de Intenção de Votos</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #53acac;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.candidates {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2ea534;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.vote-counts {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.vote-counts h2 {
+    margin-bottom: 10px;
+}
+
+#candidateCounts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+}
+
+#candidateCounts li {
+    margin-bottom: 5px;
+    align-content: center;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Eleição 2024</h1>
+        <p>Escolha seu candidato preferido:</p>
+        <div class="candidates">
+            <label>
+                <input type="radio" name="candidate" value="candidato1"> Candidato 1
+            </label>
+            <label>
+                <input type="radio" name="candidate" value="candidato2"> Candidato 2
+            </label>
+            <label>
+                <input type="radio" name="candidate" value="candidato3"> Candidato 3
+            </label>
+            <label>
+                <input type="radio" name="candidate" value="candidato4"> Candidato 4
+            </label>
+            <label>
+                <input type="radio" name="candidate" value="candidato5"> Candidato 5
+            </label>
+            <label>
+                <input type="radio" name="candidate" value="candidatoNenhum"> Nenhum
+            </label>
+        </div><br>
+        <button id="voteButton">Votar</button>
+        <p id="resultMessage"></p>
+        <div id="voteCounts" class="vote-counts">
+            <h2>Contagem de Votos</h2>
+            <ul id="candidateCounts">
+                <li>Candidato 1: <span id="candidate1Count">0</span> votos</li>
+                <li>Candidato 2: <span id="candidate2Count">0</span> votos</li>
+                <li>Candidato 3: <span id="candidate3Count">0</span> votos</li>
+                <li>Candidato 4: <span id="candidate4Count">0</span> votos</li>
+                <li>Candidato 5: <span id="candidate5Count">0</span> votos</li>
+                <li>Candidato Nenhum: <span id="candidateNenhumCount">0</span> votos</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const voteButton = document.getElementById("voteButton");
+    const resultMessage = document.getElementById("resultMessage");
+    const candidate1Count = document.getElementById("candidate1Count");
+    const candidate2Count = document.getElementById("candidate2Count");
+    const candidate3Count = document.getElementById("candidate3Count");
+    const candidate4Count = document.getElementById("candidate4Count");
+    const candidate5Count = document.getElementById("candidate5Count");
+    const candidateNenhumCount = document.getElementById("candidateNenhumCount");
+
+    let votes = {
+        candidato1: 0,
+        candidato2: 0,
+        candidato3: 0,
+        candidato4: 0,
+        candidato5: 0,
+        candidatoNenhum: 0
+    };
+
+    voteButton.addEventListener("click", function() {
+        const selectedCandidate = document.querySelector('input[name="candidate"]:checked');
+
+        if (selectedCandidate) {
+            const candidateName = selectedCandidate.value;
+            votes[candidateName]++;
+
+            updateVoteCounts();
+            resultMessage.textContent = `Você votou em ${candidateName}. Obrigado pelo seu voto!`;
+        } else {
+            resultMessage.textContent = "Por favor, escolha um candidato antes de votar.";
+        }
+    });
+
+    function updateVoteCounts() {
+        candidate1Count.textContent = votes.candidato1;
+        candidate2Count.textContent = votes.candidato2;
+        candidate3Count.textContent = votes.candidato3;
+        candidate4Count.textContent = votes.candidato4;
+        candidate5Count.textContent = votes.candidato5;
+        candidateNenhumCount.textContent = votes.candidatoNenhum;
+    }
+});
+
+    </script>
+</body>
+</html>
