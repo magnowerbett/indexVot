@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const candidate1Count = document.getElementById("candidate1Count");
     const candidate2Count = document.getElementById("candidate2Count");
     const candidate3Count = document.getElementById("candidate3Count");
+     const candidate4Count = document.getElementById("candidate3Count");
 
     let votes = {
         candidato1: 0,
