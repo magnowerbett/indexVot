@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let votes = {
         candidato1: 0,
         candidato2: 0,
-        candidato3: 0
+        candidato3: 0,
+        candidato4: 0
     };
 
     voteButton.addEventListener("click", function() {
@@ -30,5 +31,6 @@ document.addEventListener("DOMContentLoaded", function() {
         candidate1Count.textContent = votes.candidato1;
         candidate2Count.textContent = votes.candidato2;
         candidate3Count.textContent = votes.candidato3;
+        candidate3Count.textContent = votes.candidato4;
     }
 });
