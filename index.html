@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sistema de Intenção de Votos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Eleição 2023</h1>
+        <p>Escolha seu candidato preferido:</p>
+        <div class="candidates">
+            <label>
+                <input type="radio" name="candidate" value="candidato1"> Candidato 1
+            </label>
+            <label>
+                <input type="radio" name="candidate" value="candidato2"> Candidato 2
+            </label>
+            <label>
+                <input type="radio" name="candidate" value="candidato3"> Candidato 3
+            </label>
+        </div>
+        <button id="voteButton">Votar</button>
+        <p id="resultMessage"></p>
+        <div id="voteCounts" class="vote-counts">
+            <h2>Contagem de Votos</h2>
+            <ul id="candidateCounts">
+                <li>Candidato 1: <span id="candidate1Count">0</span> votos</li>
+                <li>Candidato 2: <span id="candidate2Count">0</span> votos</li>
+                <li>Candidato 3: <span id="candidate3Count">0</span> votos</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
