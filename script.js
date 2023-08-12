@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const candidate2Count = document.getElementById("candidate2Count");
     const candidate3Count = document.getElementById("candidate3Count");
      const candidate4Count = document.getElementById("candidate4Count");
-    const Nenhum_do_candidatosCount = document.getElementById("Nenhum dos candidatosCount");
+    const Nenhum_do_candidatosCount = document.getElementById("Nenhum_dos_candidatosCount");
 
     let votes = {
         candidato1: 0,
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         candidate1Count.textContent = votes.candidato1;
         candidate2Count.textContent = votes.candidato2;
         candidate3Count.textContent = votes.candidato3;
-        candidate3Count.textContent = votes.candidato4;
+        candidate4Count.textContent = votes.candidato4;
+         candidate4Count.textContent = votes.Nenhum_do_candidatos;
     }
 });
