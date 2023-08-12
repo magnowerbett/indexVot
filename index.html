@@ -127,18 +127,7 @@ button:hover {
         candidatoNenhum: 0
     };
 
-       updateVoteCounts();
-        resultMessage.textContent = `Você votou em ${candidateName}. Obrigado pelo seu voto!`;
-      } else {
-        resultMessage.textContent = 'Erro ao registrar o voto. Por favor, tente novamente mais tarde.';
-      }
-    } catch (error) {
-      resultMessage.textContent = 'Erro ao conectar com o servidor. Por favor, tente novamente mais tarde.';
-    }
-  } else {
-    resultMessage.textContent = "Por favor, escolha um candidato antes de votar.";
-  }
-});
+
 
     function updateVoteCounts() {
         candidate1Count.textContent = votes.candidato1;
