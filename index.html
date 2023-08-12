@@ -127,25 +127,7 @@ button:hover {
         candidatoNenhum: 0
     };
 
-    voteButton.addEventListener("click", async function() {
-  const selectedCandidate = document.querySelector('input[name="candidate"]:checked');
-
-  if (selectedCandidate) {
-    const candidateName = selectedCandidate.value;
-
-    try {
-      const response = await fetch('http://localhost:3000/votar', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ candidateName })
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        votes[candidateName]++;
-        updateVoteCounts();
+       updateVoteCounts();
         resultMessage.textContent = `Você votou em ${candidateName}. Obrigado pelo seu voto!`;
       } else {
         resultMessage.textContent = 'Erro ao registrar o voto. Por favor, tente novamente mais tarde.';
